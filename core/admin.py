@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Department, Employee, Course, TrainingRecord
+from .models import Department, Employee, Course, TrainingRecord, Category, Product
 
 
 @admin.register(Department)
@@ -26,3 +26,6 @@ class TrainingRecordAdmin(admin.ModelAdmin):
     list_display = ('employee', 'course', 'enrollment_date', 'completion_status', 'score')
     list_filter = ('completion_status', 'enrollment_date')
     search_fields = ('employee__employee_code', 'employee__last_name', 'course__code')
+
+admin.site.register(Category)
+admin.site.register(Product)
